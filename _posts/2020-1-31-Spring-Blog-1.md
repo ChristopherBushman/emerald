@@ -1,13 +1,0 @@
----
-Title: Spring Blog 1
----
-   HTML, CSS and Javascript are three fundamental building blocks for a simple website. HTML creates the structure of the website and can be compared to the skeleton of a human body. CSS handles styling and most of the superficial aspects of the website, such as setting the background and the sizing and placement of different elements that make up the site. CSS can be compared to the skin of the website. Javascript handles the website's functionality. Any interactive piece of a simple website was likely built with Javascript. Javascript can be thought of as the muscles of the website.
-   Javascript is meant to be used with its many libraries. Integrating Javascript libraries saves tons of time and resources that would be wasted creating some functionality that already exists through use of a library. This week, I dove down the rabbit hole that is socket.io. Socket.io is a Javascript library that, when integrated, allows for realtime communications between servers and web clients. In my case, I used socket.io to help create a simple browser based chat room. 
-   One fundamental function of socket.io is connecting a client to a server.
-   ```
-$(function () {
-  var socket = io('http://34.94.156.131:7110', { path: '/socket.io' }); // connect to server
-  
-  console.log("A USER CONNECTED");
-   ```
-   
