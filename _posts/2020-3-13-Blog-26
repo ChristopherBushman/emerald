@@ -1,0 +1,22 @@
+---
+Title: Blog 26
+---
+
+   Small businesses often cannot justify the huge expense of implementing a large-scale ERP system that will cover the vast majority of their needs. Rather, most businesses will implement completely separate pieces of software from different vendors for each of their business needs. This week at my company I used a website building service called Unbounce to create landing pages for prospective clients. The landing pages communicate with another service called LeadsPedia.
+   
+   When a prospect submits their information through a form on a lander (webpage), the data is first combined into a variable. The Javascript I used is below: 
+   
+   ```
+   var params = 'lp_campaign_id=' + campaignId + '&lp_campaign_key=' + campaignKey + '&first_name=' + firstName + '&last_name=' + lastName + '&email_address=' + email + '&phone_home=' + phone+ '&lp_request_id=' + lpRequestId;
+   ```
+   
+   Here you can see what parameters are submitted to LeadsPedia. A prospect's first and last name, email address and phone are all collected from the form. These parameters are supplemented with a few other variables that are used for purposes I won't get in to here. All of these parameters are compiled into the variable "params".
+   
+   This large variable now needs to be sent to LeadsPedia. This is accomplished through an XMLHttpRequest. 
+   
+   ```
+   xhr.open('GET', 'https://goldalliancecapital.leadspediatrack.com/post.do?' + params, true);
+   xhr.send();
+   ```
+   
+   This simple bit of code takes the "params" parameter and sends it off to LeadsPedia where it is broken up into multiple parameters again and taken into a database. 
